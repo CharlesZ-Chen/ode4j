@@ -37,9 +37,12 @@ import org.ode4j.ode.DJoint;
 import org.ode4j.ode.OdeMath;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 public class DxJointDBall extends DxJoint implements DDoubleBallJoint {
-	private final DVector3 anchor1 = new DVector3();   // anchor w.r.t first body
-	private final DVector3 anchor2 = new DVector3();   // anchor w.r.t second body
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor1 = new DVector3();   // anchor w.r.t first body
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor2 = new DVector3();   // anchor w.r.t second body
 	private double erp;          // error reduction
 	private double cfm;          // constraint force mix in
 	private double targetDistance;

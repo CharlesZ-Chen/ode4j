@@ -40,6 +40,9 @@ import org.ode4j.math.DVector3C;
 import org.ode4j.ode.DHingeJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /**
  * ****************************************************************************
@@ -48,8 +51,8 @@ import org.ode4j.ode.internal.DxWorld;
  */
 public class DxJointHinge extends DxJoint implements DHingeJoint
 {
-	private DVector3 anchor1;   // anchor w.r.t first body
-	private DVector3 anchor2;   // anchor w.r.t second body
+	private @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor1;   // anchor w.r.t first body
+	private @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor2;   // anchor w.r.t second body
 	private DVector3 _axis1;     // axis w.r.t first body
 	private DVector3 _axis2;     // axis w.r.t second body
 	private DQuaternion qrel;   // initial relative rotation body1 -> body2

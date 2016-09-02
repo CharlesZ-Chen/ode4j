@@ -26,6 +26,9 @@ package org.ode4j.ode;
 
 import org.ode4j.math.DVector3;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 /**
  *  contact info used by contact joint.
  */
@@ -33,7 +36,7 @@ public class DContact {
 
 	public final DSurfaceParameters surface = new DSurfaceParameters();
 	public final DContactGeom geom = new DContactGeom();
-	public final DVector3 fdir1 = new DVector3();
+	public final @Ontology(values=OntologyValue.POSITION_3D) DVector3 fdir1 = new DVector3();
 
 	DContact() {
 		// Nothing

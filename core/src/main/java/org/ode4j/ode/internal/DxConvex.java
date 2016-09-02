@@ -51,6 +51,9 @@ import org.ode4j.ode.DGeom;
 import org.ode4j.ode.internal.cpp4j.java.RefDouble;
 import org.ode4j.ode.internal.cpp4j.java.RefInt;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 /**
  * Code for Convex Collision Detection
  * By Rodrigo Hernandez
@@ -60,7 +63,7 @@ public class DxConvex extends DxGeom implements DConvex {
 	/** An array of planes in the form:
 	   normal X, normal Y, normal Z,Distance */
 //	private double[] planes;
-	private DVector3[] planesV;
+	private @Ontology(values=OntologyValue.POSITION_3D) DVector3[] planesV;
 	private double[] planesD;
 
 	/** An array of points X,Y,Z. */

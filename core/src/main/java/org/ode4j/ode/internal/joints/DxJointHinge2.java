@@ -38,6 +38,9 @@ import org.ode4j.ode.DHinge2Joint;
 import org.ode4j.ode.internal.DxWorld;
 import org.ode4j.ode.internal.cpp4j.java.RefDouble;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /**
  * **************************************************************************
@@ -45,8 +48,8 @@ import org.ode4j.ode.internal.cpp4j.java.RefDouble;
  */
 public class DxJointHinge2 extends DxJoint implements DHinge2Joint {
 
-	private final DVector3 anchor1;   // anchor w.r.t first body
-	private final DVector3 anchor2;   // anchor w.r.t second body
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor1;   // anchor w.r.t first body
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor2;   // anchor w.r.t second body
 	private final DVector3 _axis1;     // axis 1 w.r.t first body
 	private final DVector3 _axis2;     // axis 2 w.r.t second body
 	double c0, s0;       // cos,sin of desired angle between axis 1,2

@@ -29,6 +29,9 @@ import org.ode4j.math.DVector3C;
 import org.ode4j.ode.DAMotorJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 import static org.ode4j.ode.OdeMath.*;
 
 
@@ -43,7 +46,7 @@ public class DxJointAMotor extends DxJoint implements DAMotorJoint
 	private int _num;                // number of axes (0..3)
 	private AMotorMode _mode;               // a dAMotorXXX constant
 	private int[] _rel =new int[3];             // what the axes are relative to (global,b1,b2)
-	private DVector3[] axis = new DVector3[3];       // three axes
+	private @Ontology(values=OntologyValue.POSITION_3D) DVector3[] axis = new DVector3[3];       // three axes
 	private DxJointLimitMotor[] limot= new DxJointLimitMotor[3]; // limit+motor info for axes
 	private double[] angle = new double[3];         // user-supplied angles for axes
 	// these vectors are used for calculating euler angles

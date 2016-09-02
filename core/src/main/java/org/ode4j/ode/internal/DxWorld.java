@@ -69,6 +69,9 @@ import org.ode4j.ode.threading.Threading_H.DCallWait;
 import org.ode4j.ode.threading.Threading_H.DThreadingFunctionsInfo;
 import org.ode4j.ode.threading.Threading_H.DxThreadingFunctionsInfo;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 public class DxWorld extends DBase implements DWorld, DxIThreadingDefaultImplProvider {
 
 	//TZ these are super-classes, but I made them delegates.
@@ -84,7 +87,7 @@ public class DxWorld extends DBase implements DWorld, DxIThreadingDefaultImplPro
 	//	  dxJoint firstjoint;		// joint linked list
 	public int nb;			// number of bodies and joints in lists
 	public int nj;
-	DVector3 gravity;		// gravity vector (m/s/s)
+	@Ontology(values=OntologyValue.FORCE_3D) DVector3 gravity;		// gravity vector (m/s/s)
 	private double global_erp;		// global error reduction parameter
 	double global_cfm;		// global constraint force mixing parameter
 	dxAutoDisable adis;		// auto-disable parameters

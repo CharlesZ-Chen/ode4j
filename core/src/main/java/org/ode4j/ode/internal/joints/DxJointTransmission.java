@@ -43,6 +43,9 @@ import org.ode4j.ode.DJoint;
 import org.ode4j.ode.DTransmissionJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 /**
  * Double Hinge joint.
  */
@@ -52,7 +55,7 @@ public class DxJointTransmission extends DxJoint implements DTransmissionJoint {
     private boolean update;
     private final DVector3[] contacts = new DVector3[]{new DVector3(), new DVector3()};
     private final DVector3[] axes = new DVector3[]{new DVector3(), new DVector3()};
-    private final DVector3[] anchors = new DVector3[]{new DVector3(), new DVector3()};
+    private final @Ontology(values=OntologyValue.POSITION_3D) DVector3[] anchors = new DVector3[]{new DVector3(), new DVector3()};
     private final DMatrix3[] reference = new DMatrix3[]{new DMatrix3(), new DMatrix3()};
     private final double[] phase = new double[2];
     private final double[] radii = new double[2];

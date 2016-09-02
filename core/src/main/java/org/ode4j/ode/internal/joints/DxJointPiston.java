@@ -40,6 +40,9 @@ import org.ode4j.math.DVector3C;
 import org.ode4j.ode.DPistonJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /**
  * ****************************************************************************
@@ -101,8 +104,8 @@ public class DxJointPiston extends DxJoint implements DPistonJoint
 	 *        you must add the position of the prismatic joint
 	 *        i.e anchor = R1 * anchor1 + dJointGetPistonPosition() * (R1 * axis1)
 	 */        
-	DVector3 anchor1 = new DVector3();
-	DVector3 anchor2 = new DVector3();        //< anchor w.r.t second body
+	@Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor1 = new DVector3();
+	@Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor2 = new DVector3();        //< anchor w.r.t second body
 
 	/// limit and motor information for the prismatic
 	/// part of the joint

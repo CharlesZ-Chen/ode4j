@@ -68,6 +68,9 @@ import org.ode4j.ode.internal.joints.DxJointNode;
 import org.ode4j.ode.internal.joints.OdeJointsFactoryImpl;
 import org.ode4j.ode.internal.processmem.DxWorldProcessContext;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 /**
  * rigid body (dynamics object).
  */
@@ -112,10 +115,10 @@ public class DxBody extends DObject implements DBody, Cloneable {
 	public double invMass;		// 1 / mass.mass
 	public DxPosR _posr;			// position and orientation of point of reference
 	public DQuaternion _q;		// orientation quaternion
-	public DVector3 lvel;		// linear and angular velocity of POR
-	public DVector3 avel;
-	DVector3 facc,tacc;		// force and torque accumulators
-	DVector3 finite_rot_axis;	// finite rotation axis, unit length or 0=none
+	public @Ontology(values=OntologyValue.VELOCITY_3D) DVector3 lvel;		// linear and angular velocity of POR
+	public @Ontology(values=OntologyValue.VELOCITY_3D) DVector3 avel;
+	@Ontology(values=OntologyValue.FORCE_3D) DVector3 facc,tacc;		// force and torque accumulators
+	@Ontology(values=OntologyValue.POSITION_3D) DVector3 finite_rot_axis;	// finite rotation axis, unit length or 0=none
 
 	// auto-disable information
 	dxAutoDisable adis;		// auto-disable parameters

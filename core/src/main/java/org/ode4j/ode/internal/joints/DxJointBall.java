@@ -29,6 +29,9 @@ import org.ode4j.math.DVector3C;
 import org.ode4j.ode.DBallJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /** 
  * ****************************************************************************
@@ -36,8 +39,8 @@ import org.ode4j.ode.internal.DxWorld;
  */
 public class DxJointBall extends DxJoint implements DBallJoint
 {
-	DVector3 anchor1;   // anchor w.r.t first body
-	DVector3 anchor2;   // anchor w.r.t second body
+    @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor1;   // anchor w.r.t first body
+    @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor2;   // anchor w.r.t second body
 	double erp;          // error reduction
 	double cfm;          // constraint force mix in
 

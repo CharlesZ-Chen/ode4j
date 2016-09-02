@@ -43,6 +43,9 @@ import org.ode4j.ode.internal.gimpact.GimTrimesh;
 import org.ode4j.ode.internal.gimpact.GimGeometry.aabb3f;
 import org.ode4j.ode.internal.gimpact.GimGeometry.vec3f;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 import static org.ode4j.ode.OdeConstants.*;
 import static org.ode4j.ode.internal.Common.*;
 
@@ -199,11 +202,11 @@ public class CollideTrimeshBoxOld implements DColliderFn {
 
 		// box data
 		final DMatrix3 m_mHullBoxRot = new DMatrix3();
-		final DVector3 m_vHullBoxPos = new DVector3();
-		final DVector3 m_vBoxHalfSize = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vHullBoxPos = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vBoxHalfSize = new DVector3();
 
 		// mesh data
-		final DVector3   m_vHullDstPos = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3   m_vHullDstPos = new DVector3();
 
 		// global collider data
 		final DVector3 m_vBestNormal = new DVector3();
@@ -212,7 +215,10 @@ public class CollideTrimeshBoxOld implements DColliderFn {
 		int    m_iBestAxis;
 		@SuppressWarnings("unused")
 		int    m_iExitAxis;
-		final DVector3 m_vE0 = new DVector3(), m_vE1 = new DVector3(), m_vE2 = new DVector3(), m_vN = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vE0 = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vE1 = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vE2 = new DVector3();
+		final @Ontology(values=OntologyValue.POSITION_3D) DVector3 m_vN = new DVector3();
 
 		// global info for contact creation
 		int m_iFlags;

@@ -26,6 +26,9 @@ package org.ode4j.ode;
 
 import org.ode4j.math.DVector3;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /**
  * Describe the contact point between two geoms.
@@ -42,7 +45,7 @@ import org.ode4j.math.DVector3;
 public class DContactGeom {
 	
 	/** contact position */
-	public final DVector3 pos = new DVector3();          
+	public final @Ontology(values=OntologyValue.POSITION_3D) DVector3 pos = new DVector3();          
     /** normal vector */
 	public final DVector3 normal = new DVector3();
     /** penetration depth */

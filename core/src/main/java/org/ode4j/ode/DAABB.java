@@ -26,6 +26,8 @@ package org.ode4j.ode;
 
 import org.ode4j.math.DVector3;
 import org.ode4j.math.DVector3C;
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
 
 /**
  * Convenience class for operations on AABB (Axis-aligned bounding boxes).
@@ -37,8 +39,8 @@ import org.ode4j.math.DVector3C;
  */
 public class DAABB implements DAABBC {
 	
-	private final DVector3 _min = new DVector3();
-	private final DVector3 _max = new DVector3();
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 _min = new DVector3();
+	private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 _max = new DVector3();
 	
 	
 	/**

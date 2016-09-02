@@ -39,6 +39,9 @@ import org.ode4j.math.DVector3C;
 import org.ode4j.ode.DPRJoint;
 import org.ode4j.ode.internal.DxWorld;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /**
  *  Prismatic and Rotoide.
@@ -66,7 +69,7 @@ public class DxJointPR extends DxJoint implements DPRJoint
 	 * <p>NOTE: Position of body 2 in world frame + anchor2 in world frame give 
 	 * the position of the rotoide articulation.
 	 */
-	DVector3 _anchor2;  
+    @Ontology(values=OntologyValue.POSITION_3D) DVector3 _anchor2;  
 	
 	/** 
 	 * Axis of the rotoide articulation w.r.t first body.

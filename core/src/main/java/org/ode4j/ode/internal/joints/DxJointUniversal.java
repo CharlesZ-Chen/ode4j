@@ -45,6 +45,9 @@ import org.ode4j.ode.DUniversalJoint;
 import org.ode4j.ode.internal.DxWorld;
 import org.ode4j.ode.internal.cpp4j.java.RefDouble;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 
 /** 
  * ****************************************************************************
@@ -57,8 +60,8 @@ import org.ode4j.ode.internal.cpp4j.java.RefDouble;
  */
 public class DxJointUniversal extends DxJoint implements DUniversalJoint
 {
-	DVector3 _anchor1 = new DVector3();   // anchor w.r.t first body
-	DVector3 _anchor2 = new DVector3();   // anchor w.r.t second body
+    @Ontology(values=OntologyValue.POSITION_3D) DVector3 _anchor1 = new DVector3();   // anchor w.r.t first body
+    @Ontology(values=OntologyValue.POSITION_3D) DVector3 _anchor2 = new DVector3();   // anchor w.r.t second body
 	DVector3 _axis1;     // axis w.r.t first body
 	DVector3 _axis2;     // axis w.r.t second body
 	DQuaternion qrel1;  // initial relative rotation body1 -> virtual cross piece

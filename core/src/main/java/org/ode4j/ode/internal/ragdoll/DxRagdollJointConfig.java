@@ -27,12 +27,15 @@ package org.ode4j.ode.internal.ragdoll;
 import org.ode4j.math.DVector3;
 import org.ode4j.ode.ragdoll.DRagdollJointConfig;
 
+import ontology.qual.Ontology;
+import ontology.qual.OntologyValue;
+
 public class DxRagdollJointConfig implements DRagdollJointConfig {
 
     private final JointType type;
     private final int bone;
     private final int bone2;
-    private final DVector3 anchor;
+    private final @Ontology(values=OntologyValue.POSITION_3D) DVector3 anchor;
     private final DVector3 axis;
     private final DVector3 axis2;
     private final double limitMin;
